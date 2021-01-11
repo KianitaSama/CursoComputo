@@ -15,7 +15,15 @@
                         <label for="email">Apellido</label>
                         <input type="text" class="form-control" name="lastname" id="lastname" value="<?=set_value('lastname')?>"> 
                     </div>
-                    <div class="col-12">
+                    <div class="form-group col-md-6">
+                  <label for="inputState">Tipo de Usuario</label>
+                  <select id="Privilegio" class="form-control" name="Privilegio">
+                    <option >Administrador </option>
+                    <option>Maestro </option>
+                     <option>Uusuario</option>
+                  </select>
+                </div>
+                    <div class="col-6">
                         <div class="form-group">
                             <label for="email">Correo</label>
                             <input type="text" class="form-control" name="email" id="email" value="<?=set_value('email')?>"> 
