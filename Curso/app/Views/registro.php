@@ -18,6 +18,7 @@
 				      <th >No.Cuenta</th>
 				      <th class="table-active">Carrera</th>
 				      <th>Borrar</th>
+				      <th>Editar</th>
 				      <th class="table-active">Constancia</th>
 
 				    </tr>
@@ -38,6 +39,9 @@
 				    <td class="table-active"><?php echo $mostrar['carrera'] ?></td>	            
                     <td>
                    <a href="borrar?id=<?php echo $mostrar['id']; ?>" class="btn btn-outline-danger" role="button" ><i class="fa fa-trash"></i>Borrar</a>
+                   <td>
+                   <a class="btn-outline-danger" href="<?php echo site_url('Dashboard/editarR/').$mostrar['id']?>"> Editar </a>	
+                   </td> 
                     </td>
                     <td class="table-active">
                     	<div class="form-check">

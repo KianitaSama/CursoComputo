@@ -34,12 +34,13 @@ $routes->get('./', 'Users::index');
 $routes->get('borrar', 'Dashboard::Borrar');
 //$routes->get('registro', 'Dashboard::registro');
 $routes->match(['get','post'],'registro',  'Dashboard::Guadar');
+$routes->match(['get','post'],'actualizar',  'Dashboard::actualizar');
 $routes->match(['get','post'],'inicio', 'Users::index');
 $routes->match(['get','post'],'dashboard', 'Dashboard::index');
 $routes->match(['get','post'],'logout', 'Users::logout');
 $routes->match(['get','post'],'register', 'Users::register');
 $routes->match(['get','post'],'profile', 'Users::profile');
-
+$routes->match(['get','post'],'Editar',  'Dashboard::editarR');
 
 
 /**

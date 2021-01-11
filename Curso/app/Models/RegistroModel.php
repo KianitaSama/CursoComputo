@@ -10,7 +10,31 @@ class RegistroModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['nombre', 'paterno','materno','cuenta', 'estado','modalidad','carrera', 'sementre','externo','facultad','ocultar','updated_at'];
+    protected $allowedFields = ['nombre', 'paterno','materno','cuenta', 'estado','modalidad','carrera', 'sementre','externo','facultad','ocultar','updated_at','Pregistro','Pagado','Acreditado'];
 
+public function insertar($datos) {
+			$Nombres = $this->db->table('registro');
+			$Nombres->insert($datos);
+
+			return $this->db->insertID(); 
+		}
+
+public function obtenerNombre($data) {
+			$Nombres =  $this->db->table('registro');
+			$Nombres->where($data);
+			return $Nombres->get()->getResultArray();
+		}
+
+public function actualizar($data, $id) {
+			$Nombres = $this->db->table('registro');
+			$Nombres->set($data);
+			$Nombres->where('id', $id);
+			return $Nombres->update();
+		}
+public function eliminar($data) {
+			$Nombres = $this->db->table('registro');
+			$Nombres->where($data);
+			return $Nombres->delete();
+		}
     
 }

@@ -8,7 +8,8 @@ class Dashboard extends BaseController
 	{
 		$data = [];
 		if(! session()->get('isLoggedIn'))
-          redirect()->to('inicio');  
+          redirect()->to('inicio');
+
         echo view('general/header', $data);
 		echo view('dashboard');
 		echo view('general/footer');
@@ -22,23 +23,26 @@ class Dashboard extends BaseController
 
 	}
 
-	public function Guadar()
-	{
+	public function Guadar(){
+
 		if(! session()->get('isLoggedIn'))
           redirect()->to('inicio'); 
+
+
 	
 		$data = [];
+        helper(['form']);
 
-		helper(['form']);
 		if($this->request->getMethod()=='post'){
 			$rules =[
 				'nombre' => 'required|min_length[3]|max_length[20]',
-				'cuenta' => 'required|min_length[9]|max_length[9]', 
+				'cuenta' => 'required|min_length[8]|max_length[9]', 
 				
 			];
 
 			if(! $this->validate($rules)){
 				$data['validation'] = $this->validator;
+
 			}else{
 				$model = new RegistroModel();
 				$newData = [
@@ -52,6 +56,9 @@ class Dashboard extends BaseController
 					'sementre' => $this->request->getVar('sementre'),
 					'externo' => $this->request->getVar('externo'),
 					'facultad' => $this->request->getVar('facultad'),
+					'Pregistro' => $this->request->getVar('Pregistro'),
+					'Pagado' => $this->request->getVar('Pagado'),
+
 					
 				];
 				$model->save($newData);
@@ -66,4 +73,49 @@ class Dashboard extends BaseController
 		echo view('general/footer');
 	
   }
+
+  	private function setUserDate($user){
+		$data = [
+			'id' => $user['id'],
+			'nombre' => $user['nombre'],
+			'paterno' => $user['paterno'],
+			'materno' => $user['materno'],
+			
+		];
+
+		
+		return true;
+	}
+       
+    public function editarR($id){
+    
+        $data = ["id" => $id];
+		$model = new RegistroModel();
+		$respuesta = $model->obtenerNombre($data);
+
+		$datos = ["datos" => $respuesta];
+
+		
+		return view('actualizar', $datos);
+
+     }
+    public function actualizar(){
+		$datos = [
+					"nombre" => $_POST['nombre'],
+					"paterno" => $_POST['paterno'],
+					"materno" => $_POST['materno']
+				];
+		$id = $_POST['id'];
+
+		$model = new RegistroModel();
+
+		$respuesta = $model->actualizar($datos, $id);
+
+		if ($respuesta) {
+			return redirect()->to(base_url().'/')->with('mensaje','2');
+		} else {
+			return redirect()->to(base_url().'/')->with('mensaje','3');
+		}
+	}
+
 }

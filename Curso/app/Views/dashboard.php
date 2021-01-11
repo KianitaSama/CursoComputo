@@ -11,8 +11,15 @@
 
 		    <!--Formulario-->
 
-		    <form  method="post" action="registro">
-			  <div class="form-row">
+		<form  method="post" action="registro" method="post">
+
+			<div class="form-row">
+
+				 <div class="form-group col-md-12">
+			      <label for="Pregistro">Persona que Registra</label>
+			      <input type="text" class="form-control" id="Pregistro" name="Pregistro" required>
+			    </div>
+
 			    <div class="form-group col-md-6">
 			      <label for="nombre">Nombre</label>
 			      <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -124,7 +131,18 @@
 			        <option>Facultad de Psicología</option>
 			        <option> Facultad de Química</option>
 			      </select>
-			    </div>			    
+			    </div>	
+           		
+           	<div class="form-group col-md-4">
+			      <label for="inputState">Pago: Gratis=1 NO Pagado=0</label>
+			      <select id="Pagado" class="form-control" name="Pagado">
+			        <option >0</option>
+			        <option>1</option>
+		    </select>
+		   
+			</div>
+
+
 			  </div>
 
 			<center>
