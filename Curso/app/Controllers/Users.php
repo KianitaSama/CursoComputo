@@ -77,7 +77,7 @@ class Users extends BaseController
 					'lastname' => $this->request->getVar('lastname'),
 					'email' => $this->request->getVar('email'),
 					'password' => $this->request->getVar('password'),
-					'Privilegio' => $this->request->getVar('Privilegio'),
+				
 				];
 				$model->save($newData);
 				$session = session();

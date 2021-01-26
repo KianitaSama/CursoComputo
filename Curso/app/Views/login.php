@@ -1,9 +1,13 @@
+
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm8- offset-sm-2 col-md-6 offset-md-3 mt-5 pt-3 pb-3 bg-white from-wrapper">
-            <div class="container">
-                <h3>Inicio de Sesión </h3>
-                <hr><!--significa horizontal line, es un espaciado entre lineas, como un salto de línea-->
+            <div class="container" >
+           
+                <p  align="Center"> <img width="70" height="70" src="<?php echo base_url('public/imagenes/Logo.jpg') ?>"></img> <FONT SIZE=5> Cursos Cómputo</font></p>
+                <hr>
+          
+                <!--significa horizontal line, es un espaciado entre lineas, como un salto de línea-->
                 <?php if(session()->get('success')): ?>
                     <div class="alert alert-success" role="alert">
                         <?= session()->get('success') ?>
@@ -27,7 +31,7 @@
                 <?php endif; ?>
                     <div class="row">
                         <div class="col-12 col-sm-4">
-                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                            <button align="right" type="submit" class="btn">Ingresar</button>
                         </div>
                         
                     </div>
@@ -36,3 +40,11 @@
         </div>
     </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+

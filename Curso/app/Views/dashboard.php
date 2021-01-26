@@ -3,10 +3,10 @@
  <div style="padding: 30px 0px 30px 0px">
 
     <div class="container">
-		<div class="card border-secondary ">
-		  <div class="card-header text-secondary text-center"><h3>Bienvenido , <?= session()->get('lastname') ?></h3></div>
-		  <div class="card-body text-secondary">
-		    <h5 class="card-title text-center">Formulario Inscripción Curso de Cómputo </h5>
+		<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+		  <div class="card-header text-center" style="background-color:#1C00ff00;"><h3><?= session()->get('firstname')?>  <?= session()->get('lastname') ?></h3></div>
+		  <div class="card-body">
+		    <h5 class=" text-center">Formulario Inscripción Curso de Cómputo </h5>
 		    <p class="card-text">
 
 		    <!--Formulario-->
@@ -16,27 +16,27 @@
 			<div class="form-row">
 
 				 <div class="form-group col-md-12">
-			      <label for="Pregistro">Persona que Registra</label>
-			      <input type="text" class="form-control" id="Pregistro" name="Pregistro" required>
+			      <label for="Pregistro">Persona que Registra:</label>
+			      <input type="text" style="text-transform:uppercase" class="form-control" id="Pregistro" name="Pregistro" required>
 			    </div>
 
 			    <div class="form-group col-md-6">
-			      <label for="nombre">Nombre</label>
-			      <input type="text" class="form-control" id="nombre" name="nombre" required>
+			      <label for="nombre">Nombre:</label>
+			      <input type="text" style="text-transform:uppercase" class="form-control" id="nombre" name="nombre" required>
 			    </div>
 
 			    <div class="form-group col-md-6">
-			      <label for="paterno">Apellido Paterno</label>
-			      <input type="text" class="form-control" id="paterno" name="paterno" required>
+			      <label for="paterno">Apellido Paterno:</label>
+			      <input type="text" style="text-transform:uppercase" class="form-control" id="paterno" name="paterno" required>
 			    </div>
 			  
 			  <div class="form-group col-md-6">
-			    <label for="materno">Apellido Materno</label>
-			    <input type="text" class="form-control" id="materno" name="materno" required>
+			    <label for="materno">Apellido Materno:</label>
+			    <input type="text"  style="text-transform:uppercase" class="form-control" id="materno" name="materno" required>
 			  </div>
 
 			  <div class="form-group col-md-6">
-			    <label for="cuenta">No. Cuenta </label>
+			    <label for="cuenta">No. Cuenta: </label>
 			    <input type="number" class="form-control" id="cuenta" name="cuenta" required>
 			  </div>
 			  </div>
@@ -44,7 +44,7 @@
 			  <div class="form-row">
 			    
 			    <div class="form-group col-md-4">
-			      <label for="inputState">Estado</label>
+			      <label for="inputState">Estado:</label>
 			      <select id="estado" class="form-control" name="estado">
 			        <option >Egresado</option>
 			        <option>Alumno</option>
@@ -52,7 +52,7 @@
 			    </div>
 
 			    <div class="form-group col-md-4">
-			      <label for="inputState">Modalidad</label>
+			      <label for="inputState">Modalidad:</label>
 			      <select id="modalidad" class="form-control" name="modalidad">
 			        <option >Egresado </option>
 			        <option>Presencial </option>
@@ -61,7 +61,7 @@
 			    </div>
 
 			    <div class="form-group col-md-4">
-			      <label for="inputState">Carrera</label>
+			      <label for="inputState">Carrera:</label>
 			      <select id="carrera" class="form-control" name="carrera">
 			        <option >Derecho</option>
 			        <option>Comunicación Y Periodismo</option>
@@ -83,7 +83,7 @@
 			    </div>
 
 			    <div class="form-group col-md-4">
-			      <label for="inputState">Semestre</label>
+			      <label for="inputState">Semestre:</label>
 			      <select id="sementre" class="form-control" name="sementre">
 			        <option >Egresado </option>
 			        <option>Primero</option>
@@ -100,7 +100,7 @@
 			    </div>
 
 			    <div class="form-group col-md-4">
-			      <label for="inputState">Externo o Interno</label>
+			      <label for="inputState">Externo o Interno:</label>
 			      <select id="externo" class="form-control" name="externo">
 			        <option >Interno</option>
 			        <option>Distancia </option>
@@ -108,7 +108,7 @@
 			    </div>
 
 			    <div class="form-group col-md-4">
-			      <label for="inputState">Facultad</label>
+			      <label for="inputState">Facultad:</label>
 			      <select id="facultad" class="form-control" name="facultad">
 			        <option > Facultad de Estudios Superiores Aragón</option>
 			        <option>Facultad de Estudios Superiores Acatlán</option>
@@ -139,7 +139,14 @@
 			        <option >0</option>
 			        <option>1</option>
 		    </select>
-		   
+			</div>
+			<div class="form-group col-md-8">
+			      <label for="inputState">Curso</label>
+			      <select id="curso" class="form-control" name="curso">
+			        <option >Lun-Vier de 12:00 a 13:00</option>
+			        <option >Lun-Vier de 13:00 a 15:00</option>
+			        <option >Lun-Vier de 15:00 a 18:00</option>
+		    </select>	   
 			</div>
 
 
@@ -153,7 +160,7 @@
                         </div>
                     </div>
                  <?php endif; ?>
-			  <button type="submit" class="btn btn-primary">Registro</button>
+			  <button type="submit" class="btn">Registro</button>
 			</center>
 
 		</form>	

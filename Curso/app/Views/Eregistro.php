@@ -5,8 +5,8 @@
 
 
     <div class="container">
-        <div class="card border-secondary ">
-          <div class="card-header text-secondary text-center"><h3>Bienvenido , <?= session()->get('lastname') ?></h3></div>
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+          <div class="card-header text-secondary text-center"><h3> Bienbenido, <?= session()->get('lastname') ?></h3></div>
           <div class="card-body text-secondary">
             <h5 class="card-title text-center">Formulario Inscripción Curso de Cómputo </h5>
             <p class="card-text">

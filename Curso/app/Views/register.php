@@ -1,4 +1,11 @@
 <?php if (session()->get('isLoggedIn')): ?>  
+     <?php
+      $uri = service('uri');
+     ?>
+      <?php
+        $usr=$_SESSION['firstname'];
+        if($usr=='Administrador'){
+        ?>
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm8- offset-sm-2 col-md-6 offset-md-3 mt-5 pt-3 pb-3 bg-white from-wrapper">
@@ -8,22 +15,18 @@
                 <form class="" action="./register" method="post">
                 <div class="row">
                     <div class="col-12 col-sm-6">
-                        <label for="email">Nombre</label>
-                        <input type="text" class="form-control" name="firstname" id="firstname" value="<?=set_value('firstname')?>"> 
+                        <label for="inputState">Tipo de Usuario</label>
+                        <select id="firstname" class="form-control" name="firstname">
+                        <option>Administrador </option>
+                        <option>Maestro </option>
+                        <option>Uusuario</option>
+                        </select>
                     </div>
                     <div class="col-12 col-sm-6">
-                        <label for="email">Apellido</label>
+                        <label for="email">Nombre</label>
                         <input type="text" class="form-control" name="lastname" id="lastname" value="<?=set_value('lastname')?>"> 
                     </div>
-                    <div class="form-group col-md-6">
-                  <label for="inputState">Tipo de Usuario</label>
-                  <select id="Privilegio" class="form-control" name="Privilegio">
-                    <option >Administrador </option>
-                    <option>Maestro </option>
-                     <option>Uusuario</option>
-                  </select>
-                </div>
-                    <div class="col-6">
+                    <div class="col-12 col-6">
                         <div class="form-group">
                             <label for="email">Correo</label>
                             <input type="text" class="form-control" name="email" id="email" value="<?=set_value('email')?>"> 
@@ -51,7 +54,7 @@
                 <?php endif; ?>
                     <div class="row">
                         <div class="col-12 col-sm-4">
-                            <button type="submit" class="btn btn-primary">Registrar</button>
+                            <button type="submit" class="btn">Registrar</button>
                         </div>
                         <div class="col-12 col-sm-8 text-right">
                             <a href="./">Ya tienes una cuenta</a>
@@ -62,4 +65,11 @@
         </div>
     </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+ <?php
+ }
+ ?> 
   <?php endif; ?>

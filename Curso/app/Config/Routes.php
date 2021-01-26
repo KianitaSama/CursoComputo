@@ -32,6 +32,8 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('./', 'Users::index');
 $routes->get('borrar', 'Dashboard::Borrar');
+$routes->get('listaUsuario', 'Dashboard::mostrarlista');
+$routes->get('listas', 'Dashboard::listas');
 //$routes->get('registro', 'Dashboard::registro');
 $routes->match(['get','post'],'registro',  'Dashboard::Guadar');
 $routes->match(['get','post'],'actualizar',  'Dashboard::actualizar');

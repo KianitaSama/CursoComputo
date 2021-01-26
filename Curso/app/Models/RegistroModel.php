@@ -36,5 +36,9 @@ public function eliminar($data) {
 			$Nombres->where($data);
 			return $Nombres->delete();
 		}
+public function listarNombres() {
+			$Nombres = $this->db->query("SELECT * FROM registro");
+			return $Nombres->getResult();
+		}
     
 }
