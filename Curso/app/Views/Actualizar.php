@@ -68,22 +68,22 @@
 
 				 <div class="form-group col-md-12">
 			      <label for="Pregistro">Persona que Registro:</label>
-			      <input type="text" style="text-transform:uppercase" class="form-control" id="Pregistro" name="Pregistro" value="<?php echo $Pregistro ?>">
+			      <input type="text" onkeyup="javascript:this.value=this.value.toUpperCase();" class="form-control" id="Pregistro" name="Pregistro" value="<?php echo $Pregistro ?>">
 			    </div>
 
 			    <div class="form-group col-md-6">
 			      <label for="nombre">Nombre:</label>
-			      <input type="text" style="text-transform:uppercase" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre ?>">
+			      <input type="text" onkeyup="javascript:this.value=this.value.toUpperCase();" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre ?>">
 			    </div>
 
 			    <div class="form-group col-md-6">
 			      <label for="paterno">Apellido Paterno:</label>
-			      <input type="text" style="text-transform:uppercase" class="form-control" id="paterno" name="paterno" value="<?php echo $paterno ?>">
+			      <input type="text" onkeyup="javascript:this.value=this.value.toUpperCase();" class="form-control" id="paterno" name="paterno" value="<?php echo $paterno ?>">
 			    </div>
 			  
 			  <div class="form-group col-md-6">
 			    <label for="materno">Apellido Materno:</label>
-			    <input type="text"  style="text-transform:uppercase" class="form-control" id="materno" name="materno" value="<?php echo $materno ?>">
+			    <input type="text"  onkeyup="javascript:this.value=this.value.toUpperCase();" class="form-control" id="materno" name="materno" value="<?php echo $materno ?>">
 			  </div>
 
 			  <div class="form-group col-md-6">

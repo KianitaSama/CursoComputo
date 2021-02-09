@@ -19,7 +19,7 @@
                         <select id="firstname" class="form-control" name="firstname">
                         <option>Administrador </option>
                         <option>Maestro </option>
-                        <option>Uusuario</option>
+                        <option>Usuario</option>
                         </select>
                     </div>
                     <div class="col-12 col-sm-6">

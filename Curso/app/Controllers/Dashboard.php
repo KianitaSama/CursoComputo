@@ -2,6 +2,8 @@
 
 use App\Models\RegistroModel;
 use App\Models\RegistrosModel;
+use App\Models\CursosModel;
+
 class Dashboard extends BaseController
 {
 	public function index()
@@ -10,12 +12,24 @@ class Dashboard extends BaseController
 		if(! session()->get('isLoggedIn'))
           redirect()->to('inicio');
 
+        $Crud = new CursosModel();
+		$datos = $Crud->listarNombres();
+
+		$dat = [
+					"datos" => $datos,
+				];
+
         echo view('general/header', $data);
-		echo view('dashboard');
+		echo view('dashboard', $dat );
 		echo view('general/footer');
 	}
 
-	public function Borrar(){
+	public function Borrar($id){
+
+		$model = new RegistroModel();
+		$data = ["id" => $id];
+
+		$model->eliminar($data);
 		
 		echo view('general/header');
 		echo view('registro');
@@ -59,6 +73,9 @@ class Dashboard extends BaseController
 					'facultad' => $this->request->getVar('facultad'),
 					'Pregistro' => $this->request->getVar('Pregistro'),
 					'Pagado' => $this->request->getVar('Pagado'),
+					'Inombre' => $this->request->getVar('Inombre'),
+					'InicioC' => $this->request->getVar('InicioC'),
+					'FinC' => $this->request->getVar('FinC'),
 
 					
 				];
@@ -101,9 +118,7 @@ class Dashboard extends BaseController
 	}
        
     public function editarR($id){
-
-
-    
+   
         $data = ["id" => $id];
 		$model = new RegistroModel();
 		$respuesta = $model->obtenerNombre($data);
@@ -136,8 +151,7 @@ class Dashboard extends BaseController
 
 		$model = new RegistroModel();
 		$model1 = new RegistrosModel();
-		$model1->insertar($datos);
-
+		$model1->insertar($datos);       
 		$respuesta = $model->actualizar($datos, $id);
 
 		if ($respuesta) {
@@ -170,7 +184,7 @@ class Dashboard extends BaseController
 		
 
         echo view('general/header');
-		echo view('listas');
+		echo view('Grupos/listas');
 		echo view('general/footer');
 	}
 

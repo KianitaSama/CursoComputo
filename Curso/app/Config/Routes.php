@@ -31,10 +31,19 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('./', 'Users::index');
-$routes->get('borrar', 'Dashboard::Borrar');
+$routes->get('intento', 'Prueba::intento');
+//$routes->get('borrar', 'Dashboard::Borrar');
 $routes->get('listaUsuario', 'Dashboard::mostrarlista');
 $routes->get('listas', 'Dashboard::listas');
+$routes->get('busqueda', 'Prueba::busqueda');
+$routes->get('buscar', 'Prueba::buscar');
+$routes->get('buscador', 'Prueba:: buscador');
 //$routes->get('registro', 'Dashboard::registro');
+//$routes->match(['get','post'],'buscador',  'Prueba:: buscador');
+
+$routes->match(['get','post'],'borrar',  'Dashboard::Borrar');
+$routes->match(['get','post'],'rgrupos',  'Prueba::Fgrupos');
+$routes->match(['get','post'],'cursos',  'Prueba::Ggrupos');
 $routes->match(['get','post'],'registro',  'Dashboard::Guadar');
 $routes->match(['get','post'],'actualizar',  'Dashboard::actualizar');
 $routes->match(['get','post'],'inicio', 'Users::index');

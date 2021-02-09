@@ -1,4 +1,6 @@
-<?php if (session()->get('isLoggedIn')): ?>  
+<?php if (session()->get('isLoggedIn')): ?>
+
+
 
  <div style="padding: 30px 0px 30px 0px">
 
@@ -17,48 +19,44 @@
 
 				 <div class="form-group col-md-12">
 			      <label for="Pregistro">Persona que Registra:</label>
-			      <input type="text" style="text-transform:uppercase" class="form-control" id="Pregistro" name="Pregistro" required>
+			      <input type="text" onkeyup="javascript:this.value=this.value.toUpperCase();" class="form-control" id="Pregistro" name="Pregistro" required>
 			    </div>
 
-			    <div class="form-group col-md-6">
-			      <label for="nombre">Nombre:</label>
-			      <input type="text" style="text-transform:uppercase" class="form-control" id="nombre" name="nombre" required>
+			    <div class="form-group col-md-12">
+			      <label for="nombre">Nombres:</label>
+			      <input type="text" onkeyup="javascript:this.value=this.value.toUpperCase();" class="form-control" id="nombre" name="nombre" required>
 			    </div>
 
 			    <div class="form-group col-md-6">
 			      <label for="paterno">Apellido Paterno:</label>
-			      <input type="text" style="text-transform:uppercase" class="form-control" id="paterno" name="paterno" required>
+			      <input type="text" onkeyup="javascript:this.value=this.value.toUpperCase();" class="form-control" id="paterno" name="paterno" required>
 			    </div>
 			  
 			  <div class="form-group col-md-6">
 			    <label for="materno">Apellido Materno:</label>
-			    <input type="text"  style="text-transform:uppercase" class="form-control" id="materno" name="materno" required>
+			    <input type="text" onkeyup="javascript:this.value=this.value.toUpperCase();" class="form-control" id="materno" name="materno" required>
 			  </div>
 
-			  <div class="form-group col-md-6">
+			 
+			</div>
+
+
+			  <div class="form-row">
+
+			  <div class="form-group col-md-4">
+			      <label for="inputState">Estado:</label>
+			      <select id="estado" class="form-control" name="estado">
+			        <option >Alumno</option>
+			        <option >Egresado</option>
+			        <option>Externo</option>
+			      </select>
+			  </div>
+
+			  <div class="form-group col-md-4">
 			    <label for="cuenta">No. Cuenta: </label>
 			    <input type="number" class="form-control" id="cuenta" name="cuenta" required>
 			  </div>
-			  </div>
-
-			  <div class="form-row">
 			    
-			    <div class="form-group col-md-4">
-			      <label for="inputState">Estado:</label>
-			      <select id="estado" class="form-control" name="estado">
-			        <option >Egresado</option>
-			        <option>Alumno</option>
-			      </select>
-			    </div>
-
-			    <div class="form-group col-md-4">
-			      <label for="inputState">Modalidad:</label>
-			      <select id="modalidad" class="form-control" name="modalidad">
-			        <option >Egresado </option>
-			        <option>Presencial </option>
-			         <option>Distancia </option>
-			      </select>
-			    </div>
 
 			    <div class="form-group col-md-4">
 			      <label for="inputState">Carrera:</label>
@@ -99,13 +97,6 @@
 			      </select>
 			    </div>
 
-			    <div class="form-group col-md-4">
-			      <label for="inputState">Externo o Interno:</label>
-			      <select id="externo" class="form-control" name="externo">
-			        <option >Interno</option>
-			        <option>Distancia </option>
-			      </select>
-			    </div>
 
 			    <div class="form-group col-md-4">
 			      <label for="inputState">Facultad:</label>
@@ -131,25 +122,39 @@
 			        <option>Facultad de Psicología</option>
 			        <option> Facultad de Química</option>
 			      </select>
-			    </div>	
-           		
-           	<div class="form-group col-md-4">
-			      <label for="inputState">Pago: Gratis=1 NO Pagado=0</label>
+			    </div>	         		
+			<div class="form-group col-md-12">
+			      <label for="inputState">Cursos</label>
+			      <select id="Inombre" class="form-control" name="Inombre">
+			       <?php foreach($datos as $key): ?>
+			       <option> <?php echo $key->Inombre?> </option>
+			       <?php endforeach; ?>
+		   </select>	  
+           </div>
+           <div class="form-group col-md-12">
+			      <label for="inputState">Descipción Cursos</label>
+			      <select id="Inombre" class="form-control" name="Inombre">
+			       <?php foreach($datos as $key): ?>
+			       <option> <?php echo $key->Inombre?> </option>
+			       <?php endforeach; ?>
+		   </select>	  
+           </div>
+			<div class="form-group col-md-8">
+			      <label for="inputState">Descipción de Pago</label>
+			      <select id="Inombre" class="form-control" name="Inombre">
+			       <?php foreach($datos as $key): ?>
+			       <option> <?php echo $key->Inombre?> </option>
+			       <?php endforeach; ?>
+		   </select>	  
+           </div>
+            <div class="form-group col-md-4">
+			      <label for="inputState">Pago: Gratis= -1; NO Pagado= 0; Pagado= 1</label>
 			      <select id="Pagado" class="form-control" name="Pagado">
-			        <option >0</option>
+			      	<option>-1</option>
+			        <option>0</option>
 			        <option>1</option>
 		    </select>
 			</div>
-			<div class="form-group col-md-8">
-			      <label for="inputState">Curso</label>
-			      <select id="curso" class="form-control" name="curso">
-			        <option >Lun-Vier de 12:00 a 13:00</option>
-			        <option >Lun-Vier de 13:00 a 15:00</option>
-			        <option >Lun-Vier de 15:00 a 18:00</option>
-		    </select>	   
-			</div>
-
-
 			  </div>
 
 			<center>

@@ -43,6 +43,12 @@
       <li style="padding:5px 0px 0px 10px" class="nav-item <?= ($uri->getSegment(1) == 'register' ? 'active' : null) ?>">
         <a  class="nav-link" style="color:#000000" href="registro">Registro</a>
       </li>
+      <li style="padding:5px 0px 0px 10px" class="nav-item <?= ($uri->getSegment(1) == 'register' ? 'active' : null) ?>">
+        <a  class="nav-link" style="color:#000000" href="rgrupos">Registro Grupos</a>
+      </li>
+      <li style="padding:5px 0px 0px 10px" class="nav-item <?= ($uri->getSegment(1) == 'register' ? 'active' : null) ?>">
+        <a  class="nav-link" style="color:#000000" href="busqueda">Buscar Grupos</a>
+      </li>
       <!--<li style="padding:5px 0px 0px 20px" class="nav-item <?= ($uri->getSegment(1) == 'profile' ? 'active' : null) ?>">
         <a class="nav-link" href="profile">Perfil</a>
       </li>-->
@@ -73,7 +79,10 @@
       </li>
       <li style="padding:5px 0px 0px 10px" class="nav-item <?= ($uri->getSegment(1) == 'register' ? 'active' : null) ?>">
         <a class="nav-link" style="color:#000000" href="registro">Registro</a>
-      </li>      
+      </li> 
+      <li style="padding:5px 0px 0px 10px" class="nav-item <?= ($uri->getSegment(1) == 'register' ? 'active' : null) ?>">
+        <a class="nav-link" style="color:#000000" href="listas">Listas</a>
+      </li>
       </ul>
      <ul class="navbar-nav my-2 my-lg-0">
           <li class="nav-item">
@@ -86,7 +95,7 @@
           
           <?php
         $usr=$_SESSION['firstname'];
-        if($usr=='Uusuario'){
+        if($usr=='Usuario'){
         ?>
       <ul class="navbar-nav mr-auto">
         <div class="header_logo">
@@ -95,9 +104,9 @@
       <li style="padding:5px 0px 0px 10px" class="nav-item <?= ($uri->getSegment(1) == 'Dashboard/inicio' ? 'active' : null) ?>">
         <a class="nav-link" style="color:#000000"  href="dashboard">Formulario</a>
       </li>   
-      <li style="padding:5px 0px 0px 10px" class="nav-item <?= ($uri->getSegment(1) == 'Dashboard/inicio' ? 'active' : null) ?>">
+    <!-- <li style="padding:5px 0px 0px 10px" class="nav-item <?= ($uri->getSegment(1) == 'Dashboard/inicio' ? 'active' : null) ?>">
         <a class="nav-link"  style="color:#000000" href="listaUsuario">Resgistro</a>
-      </li>   
+      </li>   -->
       </ul>
      <ul class="navbar-nav my-2 my-lg-0">
           <li class="nav-item">

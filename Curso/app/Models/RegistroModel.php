@@ -10,7 +10,7 @@ class RegistroModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['nombre', 'paterno','materno','cuenta', 'estado','modalidad','carrera', 'sementre','externo','facultad','ocultar','updated_at','Pregistro','Pagado','Acreditado'];
+    protected $allowedFields = ['nombre', 'paterno','materno','cuenta', 'estado','modalidad','carrera', 'sementre','externo','facultad','ocultar','updated_at','Pregistro','Pagado','Acreditado', 'Inombre', 'InicioC', 'FinC'];
 
 public function insertar($datos) {
 			$Nombres = $this->db->table('registro');
@@ -40,5 +40,6 @@ public function listarNombres() {
 			$Nombres = $this->db->query("SELECT * FROM registro");
 			return $Nombres->getResult();
 		}
+		
     
 }
